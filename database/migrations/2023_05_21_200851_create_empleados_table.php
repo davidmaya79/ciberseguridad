@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->string('rut')->unique();
-            $table->string('email')->unique();
-            $table->string('telefono');
+            $table->string('nombre_empoleado');
+            $table->string('apellido_empleado');
+            $table->string('rut_empleado')->unique();
+            $table->string('email_empleado')->unique();
+            $table->string('telefono_empleado');
             $table->timestamps();
         });
     }

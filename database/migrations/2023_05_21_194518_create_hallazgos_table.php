@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('auditoria_id');
             $table->foreign('auditoria_id')->references('id')->on('auditorias');
-            $table->string('descripcion');
+            $table->string('descripcion_hallazgo');
             $table->date('fecha_deteccion');
             $table->string('clasificacion');
             $table->timestamps();

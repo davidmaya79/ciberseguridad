@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('clientes');
-            $table->string('descripcion');
-            $table->string('documentacion');
+            $table->string('descripcion_auditoria');
+            $table->string('documentacion_auditoria');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             $table->timestamps();
