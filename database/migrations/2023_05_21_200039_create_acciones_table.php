@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('auditoria_id');
             $table->foreign('auditoria_id')->references('id')->on('auditorias');
-            $table->string('responsable');
+            $table->string('responsable_acciones');
             $table->string('descripcion_acciones');
             $table->date('fecha_implementacion');
             $table->timestamps();

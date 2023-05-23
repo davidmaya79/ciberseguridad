@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('auditoria_id')->references('id')->on('auditorias');
             $table->string('descripcion_hallazgo');
             $table->date('fecha_deteccion');
-            $table->string('clasificacion');
+            $table->string('clasificacion_hallazgo');
             $table->timestamps();
         });
     }
