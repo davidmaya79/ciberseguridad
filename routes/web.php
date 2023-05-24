@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+ 
 Auth::routes();
 
+// Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/clientes/index', [App\Http\Controllers\HomeController::class, 'index'])->name('clientes.index');
+
+
+// Route::get('/', function () {
+//     return view('clientes.index');
+// });
+
+Route::get('/', [ClienteController::class, 'index']);
+// Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
+// Route::get('/', [ClienteController::class, 'index'])->name('clientes.index');
+

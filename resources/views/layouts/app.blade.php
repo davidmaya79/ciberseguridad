@@ -36,6 +36,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        {{-- inicio prueba --}}
+                         
+                        {{-- fin prueba --}}
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
