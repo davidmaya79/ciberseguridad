@@ -23,18 +23,18 @@
                             {{-- fin vista --}}
                             <tr>
                                 <td class="text-center" width="20%">
-                                    <a href="" class="btn btn-primary btn-sm shadow-none" 
-                                            data-toggle="tooltip" data-placement="top" title="Ver Sexo">
+                                    <a href="{{ route('clientes.show' , $cliente) }}" class="btn btn-primary btn-sm shadow-none" 
+                                            data-toggle="tooltip" data-placement="top" title="Ver Cliente ">
                                         <i class="fa fa-book fa-fw text-white"></i></a>
                                     </a>
                                     <a href="" class="btn btn-success btn-sm shadow-none" 
-                                            data-toggle="tooltip" data-placement="top" title="Editar Sexo">
+                                            data-toggle="tooltip" data-placement="top" title="Editar Cliente">
                                         <i class="fa fa-pencil fa-fw text-white"></i></a>
                                     </a>
                                     <form action="" method="POST" class="d-inline-block">
                                         <button id="delete" name="delete" type="submit" 
                                                 class="btn btn-danger btn-sm shadow-none" 
-                                                data-toggle="tooltip" data-placement="top" title="Eliminar Sexo"
+                                                data-toggle="tooltip" data-placement="top" title="Eliminar Cliente"
                                                 onclick="return confirm('¿Estás seguro de eliminar?')">
                                             <i class="fa fa-trash-o fa-fw"></i>
                                         </button>
