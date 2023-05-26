@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="pull-right">
-                <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Inicio" href=""> 
+                <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Inicio" href="{{ route('clientes.index') }}"> 
                     <i class="fa fa-home fa-fw"></i> 
                 </a>
             </div>
