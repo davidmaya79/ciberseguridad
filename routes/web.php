@@ -17,20 +17,27 @@ use App\Http\Controllers\ClienteController;
 Route::get('/', function () {
     return view('welcome');
 });
- 
+// Route::resource('clientes', ClienteController::class);
 Auth::routes();
 
-// Auth::routes();
+ 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/clientes/index', [App\Http\Controllers\HomeController::class, 'index'])->name('clientes.index');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/clientes/index', [App\Http\Controllers\ClienteController::class, 'index'])->name('clientes.index');
+ 
 
 
 // Route::get('/', function () {
 //     return view('clientes.index');
 // });
 
-Route::get('/', [ClienteController::class, 'index']);
-// Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
-// Route::get('/', [ClienteController::class, 'index'])->name('clientes.index');
+Route::get('/', function () {
+    return redirect('/clientes');
+});
 
+
+ 
+
+ 
+
+Route::resource('clientes', ClienteController::class);
