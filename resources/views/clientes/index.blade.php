@@ -40,7 +40,9 @@
                                             data-toggle="tooltip" data-placement="top" title="Editar Cliente">
                                         <i class="fa fa-pencil fa-fw text-white"></i></a>
                                     </a>
-                                    <form action="" method="POST" class="d-inline-block">
+                                    <form action="{{ route('clientes.destroy' , $cliente) }}" method="POST" class="d-inline-block">
+                                        @csrf
+                                        @method('DELETE')
                                         <button id="delete" name="delete" type="submit" 
                                                 class="btn btn-danger btn-sm shadow-none" 
                                                 data-toggle="tooltip" data-placement="top" title="Eliminar Cliente"
