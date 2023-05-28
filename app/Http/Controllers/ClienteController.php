@@ -70,7 +70,7 @@ class ClienteController extends Controller
      */
     public function edit(Cliente $cliente)
     {
-        //
+        return view('clientes.edit', ['cliente' => $cliente]);
     }
 
     /**
@@ -82,7 +82,19 @@ class ClienteController extends Controller
      */
     public function update(Request $request, Cliente $cliente)
     {
-        //
+        $request->validate([
+            'nombre_cliente' => 'required|min:2|max:30',
+            'email_cliente' => 'required|email|unique:clientes,email_cliente,' . $cliente->id,
+            'telefono_cliente' => 'required|min:8|max:20',
+            'rut_cliente' => 'required|min:5|max:15|unique:clientes,rut_cliente,' . $cliente->id,
+            'direccion_cliente' => 'required|min:5|max:30'
+        ]); 
+
+        $cliente->update($request->all());
+
+        return back();
+        // return 'Validado';
+
     }
 
     /**
