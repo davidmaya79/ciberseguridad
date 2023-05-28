@@ -18,4 +18,6 @@ class Cliente extends Model
         'rut_cliente',
         'direccion_cliente',
     ];
+
+     
 }

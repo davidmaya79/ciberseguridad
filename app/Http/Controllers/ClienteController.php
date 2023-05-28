@@ -26,7 +26,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes.create');
     }
 
     /**
@@ -37,7 +37,18 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre_cliente' => 'required|min:2|max:30',
+            'email_cliente' => 'required|email|unique:clientes',
+            'telefono_cliente' => 'required|min:8|max:20',
+            'rut_cliente' => 'required|min:5|max:15|unique:clientes',
+            'direccion_cliente' => 'required|min:5|max:30'
+        ]);
+
+        Cliente::create($request->all());
+
+        // return $request->all();
+        return redirect()->route('clientes.index');
     }
 
     /**

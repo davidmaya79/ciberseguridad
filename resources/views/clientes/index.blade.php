@@ -3,6 +3,15 @@
 @section('content')
     <div class="container">
         ,<div class="row">
+            {{-- inicio agregar --}}
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Agregar Clientes" href="{{ route('clientes.create') }}"> 
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+            {{-- fin agregar --}}
             <div class="col-md-12">
                 <div class="table-responsive">
                     <table class="table table-hover">
