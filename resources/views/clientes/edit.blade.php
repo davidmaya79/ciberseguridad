@@ -21,7 +21,7 @@
                             @method('PUT')
                             <div class="form-group">
                                 <label for="nombre_cliente" class="font-weight-bold" style="font-size: 0.9rem;">Nombre</label>
-                                <input type="text" name="nombre_cliente" class="form-control" value="{{ $cliente->nombre_cliente }}">
+                                <input type="text" name="nombre_cliente" class="form-control" value="{{ old('nombre_cliente',$cliente->nombre_cliente) }}">
                                 @error('nombre_cliente')
                                 <small class="text-danger">
                                     {{ $message }}
@@ -31,7 +31,7 @@
                            
                             <div class="form-group">
                                 <label for="email_cliente" class="font-weight-bold" style="font-size: 0.9rem;">Email</label>
-                                <input type="email" name="email_cliente" class="form-control" value="{{ $cliente->email_cliente }}">
+                                <input type="email" name="email_cliente" class="form-control" value="{{ old('email_cliente',$cliente->email_cliente) }}">
                                 @error('email_cliente')
                                 <small class="text-danger">
                                     {{ $message }}
@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="telefono_cliente" class="font-weight-bold" style="font-size: 0.9rem;">Teléfono</label>
-                                <input type="text" name="telefono_cliente" class="form-control" value="{{ $cliente->telefono_cliente }}">
+                                <input type="text" name="telefono_cliente" class="form-control" value="{{ old('telefono_cliente',$cliente->telefono_cliente) }}">
                                 @error('telefono_cliente')
                                 <small class="text-danger">
                                     {{ $message }}
@@ -49,7 +49,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="rut_cliente" class="font-weight-bold" style="font-size: 0.9rem;">RUT</label>
-                                <input type="text" name="rut_cliente" class="form-control" value="{{ $cliente->rut_cliente }}">
+                                <input type="text" name="rut_cliente" class="form-control" value="{{ old('rut_cliente',$cliente->rut_cliente) }}">
                                 @error('rut_cliente')
                                 <small class="text-danger">
                                     {{ $message }}
@@ -58,7 +58,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="direccion_cliente" class="font-weight-bold" style="font-size: 0.9rem;">Dirección</label>
-                                <input type="text" name="direccion_cliente" class="form-control" value="{{ $cliente->direccion_cliente }}">
+                                <input type="text" name="direccion_cliente" class="form-control" value="{{ old('direccion_cliente',$cliente->direccion_cliente) }}">
                                 @error('direccion_cliente')
                                 <small class="text-danger">
                                     {{ $message }}
