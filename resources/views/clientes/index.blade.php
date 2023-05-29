@@ -2,7 +2,16 @@
 
 @section('content')
     <div class="container">
-        ,<div class="row">
+        <div class="row">
+            {{--  inicio alerta--}}
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+            </div>  
+            @endif
+             
+            {{-- fin alerta --}}
+            
             {{-- inicio agregar --}}
             <div class="col-md-12">
                 <div class="pull-right">
