@@ -108,7 +108,7 @@ class ClienteController extends Controller
 
         $cliente->update($request->all());
 
-        return back()->with('mensajedeexito','Cliente Actualizado Correctamente.');;
+        return back()->with('mensajedeexito','Cliente Actualizado Correctamente.');
         // return 'Validado';
 
     }
