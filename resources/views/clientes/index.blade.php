@@ -13,6 +13,7 @@
             </div>
             {{-- fin agregar --}}
             <div class="col-md-12">
+                @if(sizeof($clientes) > 0)
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -65,7 +66,9 @@
                     {!!  $clientes->links() !!}
                     </div>
                 </div>
-                
+                @else
+                    <div class="alert alert-secondary">No se encontraron resultados.</div>
+                @endif
                 
                 
                  
