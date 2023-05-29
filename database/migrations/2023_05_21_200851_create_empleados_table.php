@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('rut_empleado')->unique();
             $table->string('email_empleado')->unique();
             $table->string('telefono_empleado');
+            $table->string('puesto_empleado');
             $table->timestamps();
         });
     }
