@@ -94,9 +94,21 @@ class ClienteController extends Controller
             'direccion_cliente' => 'required|min:5|max:30'
         ]); 
 
+        $cliente->fill($request->only([
+            'nombre_cliente',
+            'email_cliente',
+            'telefono_cliente',
+            'rut_cliente',
+            'direccion_cliente',
+        ]));
+
+        if($cliente->isClean()){
+            return back()->with('mensajedeadvertencia','Debe realizar al menos un cambio para actualizar.');
+        }
+
         $cliente->update($request->all());
 
-        return back();
+        return back()->with('mensajedeexito','Cliente Actualizado Correctamente.');;
         // return 'Validado';
 
     }

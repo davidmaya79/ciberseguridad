@@ -3,6 +3,23 @@
 @section('content')
     <div class="container">
         <div class="row">
+             {{--  inicio alerta--}}
+             @if (session('mensajedeadvertencia'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ session('mensajedeadvertencia') }}
+                </div>  
+             @endif
+              
+             {{-- fin alerta --}}
+              {{--  inicio alerta--}}
+              @if (session('mensajedeexito'))
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{ session('mensajedeexito') }}
+              </div>  
+            @endif
+            
+           {{-- fin alerta --}}
+             
             <div class="col-md-12">
                 <div class="pull-right">
                     <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Inicio" href="{{ route('clientes.index') }}"> 
