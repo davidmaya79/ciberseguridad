@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
-
+use App\Http\Controllers\EmpleadoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,9 +35,14 @@ Route::get('/', function () {
     return redirect('/clientes');
 });
 
+// Route::get('/', function () {
+//     return redirect('/empleados');
+// });
 
  
 
  
 
 Route::resource('clientes', ClienteController::class);
+Route::resource('empleados', EmpleadoController::class);
+ 

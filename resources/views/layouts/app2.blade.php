@@ -74,10 +74,19 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                                
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             
                             <a class="nav-link" href= "">Clientes</a>
+                        </li> --}}
+                         {{--  --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('empleados.index') }}">Empleados</a>
                         </li>
+                        {{--  --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('clientes.index') }}">Clientes</a>
+                        </li>
+                        {{--  fin prueba--}}
                     </ul>
                 </div>
             </div>
