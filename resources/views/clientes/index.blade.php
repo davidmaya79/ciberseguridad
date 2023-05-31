@@ -36,6 +36,7 @@
                             <th scope="col">Dirección</th>
                         </tr>
                         </thead>
+                     
                         <tbody>
                             {{-- inicio vista --}}
                             @foreach($clientes as $cliente)
