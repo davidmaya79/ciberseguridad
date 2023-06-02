@@ -24,8 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $clientes = Cliente::all();
+          $clientes = Cliente::all();
 
-        return view('clientes.index', compact('clientes'));
+         return view('clientes.index', compact('clientes'));
+        // return view('home');
     }
 }

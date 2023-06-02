@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\pdf;
 
 class ClienteController extends Controller
 {
@@ -20,6 +21,21 @@ class ClienteController extends Controller
  
         return view('clientes.index',['clientes' => $clientes]);
     }
+
+    // pdf
+    public function report()
+    {
+        // $clientes = Cliente::all();
+
+        $clientes = Cliente::all();
+
+        $pdf = PDF::loadView('clientes.report', compact('clientes'));
+        return $pdf->download('invoice.pdf');
+ 
+         
+    }
+
+    // pdf
 
     /**
      * Show the form for creating a new resource.

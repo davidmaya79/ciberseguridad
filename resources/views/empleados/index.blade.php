@@ -34,13 +34,17 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Teléfono</th>
                                     <th scope="col">Puesto</th>
+                                    
                                 </tr>
+                                 
                             </thead>
+                             
+                             
                             <tbody>
                                 @foreach ($empleados as $empleado)
                                     <tr>
                                         <td class="text-center" width="20%">
-                                            <a href="{{ route('empleados.show', $empleado) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Empleado">
+                                            <a href="{{ route('empleados.show', $empleado) }}" class="btn btn-info btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Empleado">
                                                 <i class="fa fa-book fa-fw text-white"></i>
                                             </a>
                                             <a href="{{ route('empleados.edit', $empleado) }}" class="btn btn-success btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Empleado">
