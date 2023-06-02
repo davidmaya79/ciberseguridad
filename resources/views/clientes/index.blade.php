@@ -68,6 +68,7 @@
                                 <td>{{ $cliente->telefono_cliente }}</td>
                                 <td>{{ $cliente->rut_cliente }}</td>
                                 <td>{{ $cliente->direccion_cliente }}</td>
+                                
                             </tr>
                             @endforeach
                         </tbody>

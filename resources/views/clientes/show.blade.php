@@ -31,7 +31,11 @@
               {{-- <div class="image-container">
                 <img src="{{ asset('images/cliente.jpg') }}" alt="Haker" class="haker-image">
             </div> --}}
-              {{--  --}}
+              {{--fin  --}}
+                {{-- pdf --}}
+              <a href="{{ route('clientes.pdf') }}" class="btn btn-info mt-2 mb-2" target="_blank">Reporte</a>
+              {{-- fin pdf --}}
+
               </div>
                
             </div>

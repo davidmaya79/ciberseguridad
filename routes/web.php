@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\HomeController;
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,7 +44,8 @@ Route::get('/', function () {
  
 
  
-
+Route::get('clientes/pdf', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
 Route::resource('clientes', ClienteController::class);
 Route::resource('empleados', EmpleadoController::class);
+// Route::get('/clientes/reportPDF', [App\Http\Controllers\ClienteController::class, 'report'])->name('clientes.report');
  
