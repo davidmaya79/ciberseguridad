@@ -74,6 +74,14 @@
                             </div>
                             <div class="text-right mt-3">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
+                                 {{-- correo inicio --}}
+                                 {{-- <form action="{{ route('enviarcorreo') }}" method="POST">
+                                    @csrf
+                                    <!-- Resto de los campos del formulario -->
+                                    <!-- ... -->
+                                    <button type="submit">Enviar</button>
+                                  </form> --}}
+                                {{-- correo fin --}}
                             </div>
                         </form>
                     </div>

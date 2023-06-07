@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+ 
 use Illuminate\View\View;
 
 class ClienteController extends Controller
@@ -33,7 +34,7 @@ class ClienteController extends Controller
         return $pdf->stream();
          
     }
-
+     
     // pdf
 
     /**
