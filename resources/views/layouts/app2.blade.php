@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html> --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -80,7 +80,11 @@
                             
                             <a class="nav-link" href= "">Clientes</a>
                         </li> --}}
-                         
+                         {{-- index auditoria --}}
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('auditorias.index') }}">Auditorias</a>
+                        </li>
+                         {{-- fin auditoria --}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('empleados.index') }}">Empleados</a>
                         </li>

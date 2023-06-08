@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\AuditoriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmailController;
 /*
@@ -48,5 +49,5 @@ Route::get('/', function () {
 Route::get('clientes/pdf', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
 Route::resource('clientes', ClienteController::class);
 Route::resource('empleados', EmpleadoController::class);
-
+Route::resource('auditorias', AuditoriaController::class);
  

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Auditoria;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
  
