@@ -20,8 +20,8 @@
               </div>
               <div class="card-body text-center">
                 {{-- <h5 class="card-title"><b>{{ $auditoria->nombre_cliente}}</b></h5> --}}
-                <p>Nombre Cliente: <b>{{ $auditoria->cliente_id}}</b></p>
-                <p>Nombre Cliente: <b>{{ $auditoria->cliente->nombre_cliente }}</b></p>
+                <p>id de cliente: <b>{{ $auditoria->cliente_id}}</b></p>
+                <p>Cliente: <b>{{ $auditoria->cliente->nombre_cliente }}</b></p>
 
                 <p>Descripción: <b>{{ $auditoria->descripcion_auditoria }}</b></p>
                 <p>Documentación: <b>{{ $auditoria->documentacion_auditoria }}</b></p>
