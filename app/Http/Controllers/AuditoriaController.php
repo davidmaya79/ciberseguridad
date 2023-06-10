@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Auditoria;
@@ -30,6 +29,8 @@ class AuditoriaController extends Controller
             'fecha_inicio' => 'required|date',
             'fecha_fin' => 'required|date|after:fecha_inicio',
             'cliente_id' => 'required'
+             
+
         ]);
 
         Auditoria::create($request->all());
@@ -47,7 +48,8 @@ class AuditoriaController extends Controller
 
     public function edit(Auditoria $auditoria)
     {
-        return view('auditorias.edit', ['auditoria' => $auditoria]);
+        $clientes = Cliente::all();
+        return view('auditorias.edit', ['auditoria' => $auditoria,'clientes'=> $clientes]);
     }
 
     public function update(Request $request, Auditoria $auditoria)
@@ -66,11 +68,15 @@ class AuditoriaController extends Controller
             'fecha_inicio',
             'fecha_fin',
             'cliente_id' => 'required'
+            
+             
+             
         ]));
 
         if ($auditoria->isClean()) {
             return back()->with('warning', 'Debe realizar al menos un cambio para actualizar.');
         }
+        
 
         $auditoria->update($request->all());
 
@@ -84,4 +90,3 @@ class AuditoriaController extends Controller
         return back();
     }
 }
-
