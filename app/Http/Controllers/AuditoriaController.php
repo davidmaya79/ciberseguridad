@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Auditoria;
 use App\Models\Cliente;
+use App\Models\Empleado;
+use App\Models\Hallazgo;
 use Illuminate\Http\Request;
 
 class AuditoriaController extends Controller
@@ -16,8 +18,10 @@ class AuditoriaController extends Controller
     public function create()
     {
         $clientes = Cliente::all();
-        // return view('auditorias.create');
-        return view('auditorias.create',['clientes' => $clientes]);
+         
+        // $empleados = Empleado::all();
+         
+        return view('auditorias.create',['clientes' => $clientes/* ,'empleados' => $empleados */]);
          
     }
 
@@ -29,12 +33,14 @@ class AuditoriaController extends Controller
             'fecha_inicio' => 'required|date',
             'fecha_fin' => 'required|date|after:fecha_inicio',
             'cliente_id' => 'required'
+            // 'empleado_id' => 'required'
              
 
         ]);
 
         Auditoria::create($request->all());
-
+         
+         
         return redirect()
                 ->route('auditorias.index')
                 ->with('success', 'Auditoria registrada correctamente');
@@ -42,9 +48,13 @@ class AuditoriaController extends Controller
 
     public function show(Auditoria $auditoria)
     {
+         
         return view('auditorias.show', ['auditoria' => $auditoria]);
-        // $auditoria->load('cliente'); // Cargar la relación cliente
+         
     }
+     
+ 
+
 
     public function edit(Auditoria $auditoria)
     {

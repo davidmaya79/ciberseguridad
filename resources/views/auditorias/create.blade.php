@@ -72,6 +72,24 @@
                                 @enderror
                             </div>
                             {{-- fin auditoria --}}
+                            {{-- empleado --}}
+                            {{-- <div class="col-md-6">
+                                <label for=" auditorias_empleados" class="form-label">Empleado</label>
+                                <select id=" auditorias_empleados" class="form-select shadow-none" name=" auditorias_empleados" value="{{ old(' auditorias_empleados') }}">
+                                    <option value="" selected>Seleccionar...</option>
+                                    @foreach ($empleados as $empleado)
+                                        <option value="{{ $empleado->id }}" {{ old('auditorias_empleados') == $empleado->id ? 'selected' : '' }}>
+                                            {{ $empleado->nombre_empleado }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error(' auditorias_empleados')
+                                    <small class="text-danger" role="alert">
+                                        {{ $message }}
+                                    </small>
+                                @enderror
+                            </div> --}}
+                            {{-- fin empleado --}}
                             <div class="text-right mt-3">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                             </div>

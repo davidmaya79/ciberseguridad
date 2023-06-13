@@ -80,6 +80,11 @@
                             
                             <a class="nav-link" href= "">Clientes</a>
                         </li> --}}
+                        {{-- index hallazgos --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('hallazgos.index') }}">Hallazgo</a>
+                        </li>
+                         {{-- fin hallazgos --}}
                          {{-- index auditoria --}}
                          <li class="nav-item">
                             <a class="nav-link" href="{{ route('auditorias.index') }}">Auditorias</a>

@@ -18,9 +18,14 @@ class Empleado extends Model
         'rut_empleado',
         'email_empleado',
         'telefono_empleado',
-        'puesto_empleado',
+        'puesto_empleado'
+        // 'empleado_id'
     ];
 
+    // public function auditoria()
+    // {
+    //     return $this->belongsToMany(Auditoria::class,'auditorias_empleados');
+    // }
      
 }
 

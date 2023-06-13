@@ -19,7 +19,7 @@ class Cliente extends Model
         'direccion_cliente',
     ];
 
-    public function auditorias()
+    public function auditoria()
     
     {
         return $this->hasMany(Auditoria::class);
