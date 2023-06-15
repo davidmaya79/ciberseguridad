@@ -5,6 +5,8 @@ use App\Models\Auditoria;
 use App\Models\Cliente;
 use App\Models\Empleado;
 use App\Models\Hallazgo;
+use App\Models\Accion;
+
 use Illuminate\Http\Request;
 
 class AuditoriaController extends Controller

@@ -75,7 +75,7 @@ class HallazgoController extends Controller
             'descripcion_hallazgo',
             'fecha_deteccion',
             'clasificacion_hallazgo',
-            'auditoria_id' => 'required'
+            'auditoria_id' /* => 'required' */
             
              
              

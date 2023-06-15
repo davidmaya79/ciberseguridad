@@ -39,6 +39,13 @@ class Auditoria extends Model
     {
         return $this->hasMany(Hallazgo::class/* ,'auditoria_id' */);
     }
+
+    public function accion()
+    
+    {
+        return $this->hasMany(Accion::class/* ,'auditoria_id' */);
+    }
+     
      
 
 }

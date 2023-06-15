@@ -5,6 +5,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\AuditoriaController;
 use App\Http\Controllers\HallazgoController;
+use App\Http\Controllers\AccionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmailController;
 use App\Models\Hallazgo;
@@ -54,4 +55,11 @@ Route::resource('clientes', ClienteController::class);
 Route::resource('empleados', EmpleadoController::class);
 Route::resource('auditorias', AuditoriaController::class);
 Route::resource('hallazgos', HallazgoController::class);
- 
+Route::resource('acciones', AccionController::class);
+// Route::resource('acciones/{accione}', AccionController::class); 
+// Route::get('acciones/{accione}', [AccionController::class, 'show'])->name('acciones.show');
+// Route::put('acciones/{accione}', [AccionController::class, 'update'])->name('acciones.update');
+// Route::patch('acciones/{accione}', [AccionController::class, 'update']);
+// Route::resource('acciones', AccionController::class)->parameters([
+//     'acciones' => 'accione' // Aquí usamos 'accione' como el nombre del parámetro en singular
+// ]);
