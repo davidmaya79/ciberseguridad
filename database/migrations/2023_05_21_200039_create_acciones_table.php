@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('acciones', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('auditoria_id');
-            $table->foreign('auditoria_id')->references('id')->on('auditorias');
+            $table->foreign('auditoria_id')->references('id')->on('auditorias')->onDelete('cascade');
             $table->string('responsable_acciones');
             $table->string('descripcion_acciones');
             $table->date('fecha_implementacion');

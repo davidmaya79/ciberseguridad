@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('hallazgos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('auditoria_id');
-            $table->foreign('auditoria_id')->references('id')->on('auditorias');
+            $table->foreign('auditoria_id')->references('id')->on('auditorias')->onDelete('cascade');
             $table->string('descripcion_hallazgo');
             $table->date('fecha_deteccion');
             $table->string('clasificacion_hallazgo');

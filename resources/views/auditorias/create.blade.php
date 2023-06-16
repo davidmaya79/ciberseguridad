@@ -74,16 +74,16 @@
                             {{-- fin auditoria --}}
                             {{-- empleado --}}
                             <div class="col-md-6">
-                                <label for=" auditorias_empleados" class="form-label">Empleado</label>
-                                <select id=" auditorias_empleados" class="form-select shadow-none" name=" auditorias_empleados" value="{{ old(' auditorias_empleados') }}">
-                                    <option value="" selected>Seleccionar...</option>
-                                    @foreach ($empleados as $empleado)
-                                        <option value="{{ $empleado->id }}" {{ old('auditorias_empleados') == $empleado->id ? 'selected' : '' }}>
+                                <label class="form-label">Empleados</label>
+                                @foreach ($empleados as $empleado)
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="auditorias_empleados[]" value="{{ $empleado->id }}" id="empleado_{{ $empleado->id }}" {{ (is_array(old('auditorias_empleados')) && in_array($empleado->id, old('auditorias_empleados'))) ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="empleado_{{ $empleado->id }}">
                                             {{ $empleado->nombre_empleado }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @error(' auditorias_empleados')
+                                        </label>
+                                    </div>
+                                @endforeach
+                                @error('auditorias_empleados')
                                     <small class="text-danger" role="alert">
                                         {{ $message }}
                                     </small>
@@ -92,21 +92,22 @@
                             {{-- fin empleado --}}
                             {{-- empleado 2--}}
                             {{-- <div class="col-md-6">
-                                <label for=" auditorias_empleados" class="form-label">Empleado</label>
-                                <select id=" auditorias_empleados" class="form-select shadow-none" name=" auditorias_empleados" value="{{ old(' auditorias_empleados') }}">
-                                    <option value="" selected>Seleccionar...</option>
-                                    @foreach ($empleados as $empleado)
-                                        <option value="{{ $empleado->id }}" {{ old('auditorias_empleados') == $empleado->id ? 'selected' : '' }}>
+                                <label class="form-label">Empleados</label>
+                                @foreach ($empleados as $empleado)
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="auditorias_empleados[]" value="{{ $empleado->id }}" id="empleado_{{ $empleado->id }}" {{ in_array($empleado->id, old('auditorias_empleados', [])) ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="empleado_{{ $empleado->id }}">
                                             {{ $empleado->nombre_empleado }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @error(' auditorias_empleados')
+                                        </label>
+                                    </div>
+                                @endforeach
+                                @error('auditorias_empleados')
                                     <small class="text-danger" role="alert">
                                         {{ $message }}
                                     </small>
                                 @enderror
                             </div> --}}
+                            
                             {{-- fin empleado 2--}}
                             {{--  --}}
                             
