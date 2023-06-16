@@ -20,10 +20,12 @@ class AuditoriaController extends Controller
     public function create()
     {
         $clientes = Cliente::all();
+        $empleados = Empleado::all();
+        // $empleados = Empleado::pluck('nombre_empleado','empleado_id');
          
         // $empleados = Empleado::all();
          
-        return view('auditorias.create',['clientes' => $clientes/* ,'empleados' => $empleados */]);
+        return view('auditorias.create',['clientes' => $clientes,'empleados' => $empleados]);
          
     }
 
@@ -34,14 +36,17 @@ class AuditoriaController extends Controller
             'documentacion_auditoria' => 'required|min:2|max:100',
             'fecha_inicio' => 'required|date',
             'fecha_fin' => 'required|date|after:fecha_inicio',
-            'cliente_id' => 'required'
+            'cliente_id' => 'required',
             // 'empleado_id' => 'required'
+            'auditorias_empleados' => 'required'
              
 
         ]);
 
-        Auditoria::create($request->all());
-         
+        // Auditoria::create($request->all());
+        $auditoria = Auditoria::create($request->except('auditorias_empleados'));
+
+        $auditoria->empleados()->attach($request->auditorias_empleados);
          
         return redirect()
                 ->route('auditorias.index')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empleado;
+use App\Models\Auditoria;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller

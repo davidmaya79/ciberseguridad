@@ -16,7 +16,9 @@ class Auditoria extends Model
         'documentacion_auditoria',
         'fecha_inicio',
         'fecha_fin',
-        'cliente_id'
+        'cliente_id',
+        'empleado_id'
+
         //* 'nombre_cliente'
         // 'empleado_id',
         // 'nombre_empleado' 
@@ -29,11 +31,11 @@ class Auditoria extends Model
         return $this->belongsTo(Cliente::class,'cliente_id');
     }
 
-    // public function empleado()
-    // {
-    //     return $this->belongsToMany(Empleado::class,'auditorias_empleados','empleado_id','nombre_empleado');
-    // }
-     
+    public function empleados()
+{
+    return $this->belongsToMany(Empleado::class, 'auditorias_empleados', 'auditoria_id', 'empleado_id');
+}
+
     public function hallazgo()
     
     {

@@ -55,6 +55,28 @@
                                 
                                 <td>{{ $auditoria->hallazgo->clasificacion_hallazgo }}</td>
                             </tr> --}}
+
+                        
+                         {{-- <tr>
+                            <th>Empleado</th>
+                            <td>{{ $auditoria->empleado->nombre_empleado }}</td>
+                        </tr>  --}}
+                        <tr>
+                            <th>Empleados</th>
+                            <td>
+                                @foreach ($auditoria->empleados as $empleado)
+                                    {{ $empleado->nombre_empleado }}<br>
+                                @endforeach
+                            </td>
+                        </tr>
+                        {{-- <tr>
+                            <th>Empleados</th>
+                            <td>
+                                @foreach ($auditoria->empleados as $empleado)
+                                    {{ $empleado->nombre_empleado }}<br>
+                                @endforeach
+                            </td>
+                        </tr> --}}
                         </tbody>
                     </table>
                 </div>
