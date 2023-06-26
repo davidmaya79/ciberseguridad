@@ -65,7 +65,9 @@
                             <th>Empleados</th>
                             <td>
                                 @foreach ($auditoria->empleados as $empleado)
-                                    {{ $empleado->nombre_empleado }}<br>
+                                    {{ $empleado->nombre_empleado }} {{ $empleado->apellido_empleado }}<br>
+                                     
+                                     
                                 @endforeach
                             </td>
                         </tr>

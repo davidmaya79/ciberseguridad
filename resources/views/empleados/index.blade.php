@@ -44,10 +44,10 @@
                                 @foreach ($empleados as $empleado)
                                     <tr>
                                         <td class="text-center" width="20%">
-                                            <a href="{{ route('empleados.show', $empleado) }}" class="btn btn-info btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Empleado">
+                                            <a href="{{ route('empleados.show', $empleado) }}" class="btn btn-dark btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Empleado">
                                                 <i class="fa fa-book fa-fw text-white"></i>
                                             </a>
-                                            <a href="{{ route('empleados.edit', $empleado) }}" class="btn btn-success btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Empleado">
+                                            <a href="{{ route('empleados.edit', $empleado) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Empleado">
                                                 <i class="fa fa-pencil fa-fw text-white"></i>
                                             </a>
                                             <form action="{{ route('empleados.destroy', $empleado) }}" method="POST" class="d-inline-block">

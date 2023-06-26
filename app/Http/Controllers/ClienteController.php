@@ -26,17 +26,26 @@ class ClienteController extends Controller
     }
 
     // pdf
-    public function pdf()
-    {
-        $clientes = Cliente::all();
-
-        $pdf = Pdf::loadView('clientes.pdf', compact('clientes'));
-
-        return $pdf->stream();
+    // public function pdf()
+    // {
+    //     $clientes = Cliente::all();
          
-    }
-     
-    // pdf
+
+    //     $pdf = Pdf::loadView('clientes.pdf', compact('clientes'));
+
+    //     return $pdf->stream();
+         
+    // }
+    public function pdf($id)
+{
+    $cliente = Cliente::findOrFail($id);
+
+    $pdf = Pdf::loadView('clientes.pdf', compact('cliente'));
+
+    return $pdf->stream();
+}
+
+    
 
     /**
      * Show the form for creating a new resource.

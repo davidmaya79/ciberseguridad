@@ -42,7 +42,7 @@
                                             <a href="{{ route('auditorias.show', $auditoria) }}" class="btn btn-dark btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Auditoría">
                                                 <i class="fa fa-book fa-fw text-white"></i>
                                             </a>
-                                            <a href="{{ route('auditorias.edit', $auditoria) }}" class="btn btn-success btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Auditoría">
+                                            <a href="{{ route('auditorias.edit', $auditoria) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Auditoría">
                                                 <i class="fa fa-pencil fa-fw text-white"></i>
                                             </a>
                                             <form action="{{ route('auditorias.destroy', $auditoria) }}" method="POST" class="d-inline-block">

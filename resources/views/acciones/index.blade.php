@@ -40,7 +40,7 @@
                                             <a href="{{ route('acciones.show', $accion) }}" class="btn btn-dark btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Acción">
                                                 <i class="fa fa-book fa-fw text-white"></i>
                                             </a>
-                                            <a href="{{ route('acciones.edit', $accion) }}" class="btn btn-success btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Acción">
+                                            <a href="{{ route('acciones.edit', $accion) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Acción">
                                                 <i class="fa fa-pencil fa-fw text-white"></i>
                                             </a>
                                             <form action="{{ route('acciones.destroy', $accion) }}" method="POST" class="d-inline-block">

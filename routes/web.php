@@ -27,6 +27,7 @@ Route::get('/', function () {
 // Route::resource('clientes', ClienteController::class);
 Auth::routes();
 
+Route::get('/auditorias/index', [App\Http\Controllers\AuditoriaController::class, 'index'])->name('auditorias.index');
  
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -34,32 +35,24 @@ Auth::routes();
  
 
 
+ 
 // Route::get('/', function () {
-//     return view('clientes.index');
-// });
-
-Route::get('/', function () {
-    return redirect('/clientes');
-});
-
-// Route::get('/', function () {
-//     return redirect('/empleados');
+//     return redirect('/clientes');
 // });
 
  
+ 
 
  
-// Route::post('/enviarcorreo', [App\Http\Controllers\EmailController::class, 'enviarcorreo'])->name('enviarcorreo');
-Route::get('clientes/pdf', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
+ 
+// Route::get('clientes/pdf', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
+Route::get('clientes/pdf/{id}', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
+
+// Route::get('/clientes/pdf/{id}', 'ClienteController@pdf')->name('clientes.pdf');
+
 Route::resource('clientes', ClienteController::class);
 Route::resource('empleados', EmpleadoController::class);
 Route::resource('auditorias', AuditoriaController::class);
 Route::resource('hallazgos', HallazgoController::class);
 Route::resource('acciones', AccionController::class);
-// Route::resource('acciones/{accione}', AccionController::class); 
-// Route::get('acciones/{accione}', [AccionController::class, 'show'])->name('acciones.show');
-// Route::put('acciones/{accione}', [AccionController::class, 'update'])->name('acciones.update');
-// Route::patch('acciones/{accione}', [AccionController::class, 'update']);
-// Route::resource('acciones', AccionController::class)->parameters([
-//     'acciones' => 'accione' // Aquí usamos 'accione' como el nombre del parámetro en singular
-// ]);
+ 

@@ -41,7 +41,7 @@
                                             <a href="{{ route('hallazgos.show', $hallazgo) }}" class="btn btn-dark btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Hallazgo">
                                                 <i class="fa fa-book fa-fw text-white"></i>
                                             </a>
-                                            <a href="{{ route('hallazgos.edit', $hallazgo) }}" class="btn btn-success btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Hallazgo">
+                                            <a href="{{ route('hallazgos.edit', $hallazgo) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Hallazgo">
                                                 <i class="fa fa-pencil fa-fw text-white"></i>
                                             </a>
                                             <form action="{{ route('hallazgos.destroy', $hallazgo) }}" method="POST" class="d-inline-block">

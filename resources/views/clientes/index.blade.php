@@ -43,12 +43,12 @@
                             {{-- fin vista --}}
                             <tr>
                                 <td class="text-center" width="20%">
-                                    <a href="{{ route('clientes.show' , $cliente) }}" class="btn btn-primary btn-sm shadow-none" 
+                                    <a href="{{ route('clientes.show' , $cliente) }}" class="btn btn-dark btn-sm shadow-none" 
                                             data-toggle="tooltip" data-placement="top" title="Ver Cliente ">
                                         <i class="fa fa-book fa-fw text-white"></i></a>
                                     </a>
                                     
-                                    <a href="{{ route('clientes.edit' , $cliente) }}" class="btn btn-success btn-sm shadow-none" 
+                                    <a href="{{ route('clientes.edit' , $cliente) }}" class="btn btn-primary btn-sm shadow-none" 
                                             data-toggle="tooltip" data-placement="top" title="Editar Cliente">
                                         <i class="fa fa-pencil fa-fw text-white"></i></a>
                                     </a>
