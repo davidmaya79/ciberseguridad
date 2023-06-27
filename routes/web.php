@@ -45,8 +45,10 @@ Route::get('/auditorias/index', [App\Http\Controllers\AuditoriaController::class
 
  
  
-// Route::get('clientes/pdf', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
+ 
 Route::get('clientes/pdf/{id}', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
+Route::get('auditorias/pdf/{id}', [App\Http\Controllers\AuditoriaController::class, 'pdf'])->name('auditorias.pdf');
+
 
 // Route::get('/clientes/pdf/{id}', 'ClienteController@pdf')->name('clientes.pdf');
 

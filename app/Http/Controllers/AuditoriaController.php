@@ -6,6 +6,7 @@ use App\Models\Cliente;
 use App\Models\Empleado;
 use App\Models\Hallazgo;
 use App\Models\Accion;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 use Illuminate\Http\Request;
 
@@ -16,6 +17,16 @@ class AuditoriaController extends Controller
         $auditorias = Auditoria::paginate(9);
         return view('auditorias.index', ['auditorias' => $auditorias]);
     }
+
+    public function pdf($id)
+    {
+        $auditoria = Auditoria::findOrFail($id);
+    
+        $pdf = Pdf::loadView('auditorias.pdf', compact('auditoria'));
+    
+        return $pdf->stream();
+    }
+    
 
     public function create()
     {
@@ -33,7 +44,7 @@ class AuditoriaController extends Controller
     {
         $request->validate([
             'descripcion_auditoria' => 'required|min:2|max:100',
-            'documentacion_auditoria' => 'required|min:2|max:100',
+            'documentacion_auditoria' => 'required|min:2|max:9000',
             'fecha_inicio' => 'required|date',
             'fecha_fin' => 'required|date|after:fecha_inicio',
             'cliente_id' => 'required',
@@ -73,7 +84,7 @@ class AuditoriaController extends Controller
     {
         $request->validate([
             'descripcion_auditoria' => 'required|min:2|max:100',
-            'documentacion_auditoria' => 'required|min:2|max:100',
+            'documentacion_auditoria' => 'required|min:2|max:9000',
             'fecha_inicio' => 'required|date',
             'fecha_fin' => 'required|date|after:fecha_inicio',
              

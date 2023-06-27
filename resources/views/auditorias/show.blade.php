@@ -71,6 +71,7 @@
                                 @endforeach
                             </td>
                         </tr>
+                        
                         {{-- <tr>
                             <th>Empleados</th>
                             <td>
@@ -81,6 +82,7 @@
                         </tr> --}}
                         </tbody>
                     </table>
+                    <a href="{{ route('auditorias.pdf', $auditoria->id) }}" class="btn btn-info mt-2 mb-2" target="_blank">Documentación PDF </a>
                 </div>
             </div>
         </div>
