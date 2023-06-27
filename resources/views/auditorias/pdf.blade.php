@@ -55,19 +55,19 @@
 <body>
     <div class="container">
         <img src="{{ asset('images/cliente.jpg') }}" alt="Logo" class="logo">
-        <h1>AUDITORÍA</h1>
+        <h2>DOCUMENTACIÓN AUDITORÍA</h2>
+        
         <table class="table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                     
-                </tr>
-            </thead>
+            
             <tbody>
                 <tr>
-                    <td>{{ $auditoria->id }}</td>
+                    <th>Cliente<td>{{ $auditoria->cliente->nombre_cliente }}</td></th> 
+                     
+                 
+                <tr>
+                     
                     <tr>
-                        <th>Documentación</th>
+                         
                         <td>{{ $auditoria->documentacion_auditoria }}</td>
                     </tr>
                     

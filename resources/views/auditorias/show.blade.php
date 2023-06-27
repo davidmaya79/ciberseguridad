@@ -38,10 +38,10 @@
                                 <th>Descripción</th>
                                 <td>{{ $auditoria->descripcion_auditoria }}</td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <th>Documentación</th>
                                 <td>{{ $auditoria->documentacion_auditoria }}</td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <th>Fecha de Inicio</th>
                                 <td>{{ $auditoria->fecha_inicio }}</td>

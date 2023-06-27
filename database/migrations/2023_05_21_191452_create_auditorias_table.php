@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
             $table->string('descripcion_auditoria');
-            $table->string('documentacion_auditoria');
+            $table->text('documentacion_auditoria');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             $table->timestamps();

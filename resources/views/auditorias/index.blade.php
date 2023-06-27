@@ -56,7 +56,7 @@
                                         <td>{{ $auditoria->id }}</td>
                                         <td>{{ $auditoria->cliente->nombre_cliente }}</td>
                                         <td>{{ $auditoria->descripcion_auditoria }}</td>
-                                        <td>{{ $auditoria->documentacion_auditoria }}</td>
+                                        {{-- <td>{{ $auditoria->documentacion_auditoria }}</td> --}}
                                         <td>{{ $auditoria->fecha_inicio }}</td>
                                         <td>{{ $auditoria->fecha_fin }}</td>
                                     </tr>
