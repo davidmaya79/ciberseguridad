@@ -66,9 +66,10 @@ class AuditoriaController extends Controller
 
     public function show(Auditoria $auditoria)
     {
-         
-        return view('auditorias.show', ['auditoria' => $auditoria]);
-         
+        $hallazgos = $auditoria->hallazgo;
+        $accione = $auditoria->accion;
+        // return view('auditorias.show', ['auditoria' => $auditoria]);
+        return view('auditorias.show', ['auditoria' => $auditoria, 'hallazgos' => $hallazgos, 'accion' => $accione]);
     }
      
  

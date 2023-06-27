@@ -30,13 +30,13 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                            {{-- <div class="form-group">
+                            <div class="form-group">
                                 <label for="responsable_acciones" class="font-weight-bold" style="font-size: 0.9rem;">Responsable de Acciones</label>
                                 <input type="text" name="responsable_acciones" class="form-control" value="{{ old('responsable_acciones') }}">
                                 @error('responsable_acciones')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
-                            </div> --}}
+                            </div>
                             <div class="form-group">
                                 <label for="descripcion_acciones" class="font-weight-bold" style="font-size: 0.9rem;">Descripción</label>
                                 <input type="text" name="descripcion_acciones" class="form-control" value="{{ old('descripcion_acciones') }}">
@@ -52,7 +52,7 @@
                                 @enderror
                             </div>
                              {{-- empleado --}}
-                             <div class="form-group">
+                             {{-- <div class="form-group">
                                 <label for="empleado_id">Empleado</label>
                                 <select class="form-control" id="empleado_id" name="empleado_id">
                                     <option value="" selected>Seleccionar empleado</option>
@@ -60,7 +60,7 @@
                                         <option value="{{ $empleado->id }}">{{ $empleado->nombre_empleado }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
                             
                             {{-- fin empleado --}}
                             <div class="text-right mt-3">

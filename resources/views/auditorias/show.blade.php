@@ -49,37 +49,55 @@
                             <tr>
                                 <th>Fecha de Entrega</th>
                                 <td>{{ $auditoria->fecha_fin }}</td>
-                            </tr>
-                            {{-- <tr>
-                                <th>Clasificación de Hallazgo</th>
                                 
-                                <td>{{ $auditoria->hallazgo->clasificacion_hallazgo }}</td>
-                            </tr> --}}
+                              </tr>
+
+                              {{-- hallazgo nivel--}}
+                              <tr>
+                                <th>Hallazgos Nivel</th>
+                                <td>
+                                    @foreach ($hallazgos as $hallazgo)
+                                          {{ $hallazgo->clasificacion_hallazgo }}<br>
+                                        
+                                    @endforeach
+                                </td>
+                            </tr>
+                              {{-- fin hallazgo --}}
+                                 {{-- hallazgo descripcion --}}
+                                 <tr>
+                                    <th>Hallazgos Descripción</th>
+                                    <td>
+                                        @foreach ($hallazgos as $hallazgo)
+                                              {{ $hallazgo->descripcion_hallazgo }}<br>
+                                            
+                                        @endforeach
+                                    </td>
+                                </tr>
+                                  {{-- fin hallazgo --}}
+                                  {{-- accion --}}
+                                  <tr>
+                                    <th>Accion Descripción</th>
+                                    <td>
+                                        @foreach ($accion as $accione)
+                                              {{ $accione->descripcion_acciones }}<br>
+                                            
+                                        @endforeach
+                                    </td>
+                                </tr>
+                                  {{-- accion fin --}}
+
 
                         
-                         {{-- <tr>
-                            <th>Empleado</th>
-                            <td>{{ $auditoria->empleado->nombre_empleado }}</td>
-                        </tr>  --}}
+                         
                         <tr>
                             <th>Empleados</th>
                             <td>
                                 @foreach ($auditoria->empleados as $empleado)
                                     {{ $empleado->nombre_empleado }} {{ $empleado->apellido_empleado }}<br>
-                                     
-                                     
                                 @endforeach
                             </td>
                         </tr>
                         
-                        {{-- <tr>
-                            <th>Empleados</th>
-                            <td>
-                                @foreach ($auditoria->empleados as $empleado)
-                                    {{ $empleado->nombre_empleado }}<br>
-                                @endforeach
-                            </td>
-                        </tr> --}}
                         </tbody>
                     </table>
                     <a href="{{ route('auditorias.pdf', $auditoria->id) }}" class="btn btn-info mt-2 mb-2" target="_blank">Documentación PDF </a>

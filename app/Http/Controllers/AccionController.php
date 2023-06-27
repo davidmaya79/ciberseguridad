@@ -19,12 +19,12 @@ class AccionController extends Controller
     public function create()
     {
         $auditorias = Auditoria::all();
-        $empleados = Empleado::all();
+        // $empleados = Empleado::all();
         // $clientes = Cliente::all();
          
 
          
-        return view('acciones.create', ['auditorias' => $auditorias,'empleados' => $empleados]);
+        return view('acciones.create', ['auditorias' => $auditorias/* ,'empleados' => $empleados */]);
     }
 
     public function store(Request $request)
@@ -33,13 +33,13 @@ class AccionController extends Controller
             'responsable_acciones' => 'required|min:2|max:100',
             'descripcion_acciones' => 'required|min:2|max:100',
             'fecha_implementacion' => 'required|date',
-            'auditoria_id' => 'required',
-            'empleado_id' => 'required'
+            'auditoria_id' => 'required'
+            // 'empleado_id' => 'required'
         ]);
 
         Accion::create($request->all());
-        $empleado = Empleado::findOrFail($request->empleado_id);
-        $request->merge(['responsable_acciones' => $empleado->nombre_empleado]);
+        // $empleado = Empleado::findOrFail($request->empleado_id);
+        // $request->merge(['responsable_acciones' => $empleado->nombre_empleado]);
          
         return redirect()
             ->route('acciones.index')

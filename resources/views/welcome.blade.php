@@ -35,8 +35,8 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                {{-- inicio laravel --}}
+            {{-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
                         <g clip-path="url(#clip0)" fill="#EF3B2D">
@@ -124,7 +124,18 @@
 
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    </div> --}}
+                    {{--  laravel fin--}}
+                    {{-- haker --}}
+                    <div class="content">
+                         
+                        
+                        
+                        <img src=" images/security69.jpg" alt="Descripción de la imagen">
+                       
                     </div>
+                    {{-- fin haker --}}
+                    
                 </div>
             </div>
         </div>

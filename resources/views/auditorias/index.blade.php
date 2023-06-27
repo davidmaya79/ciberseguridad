@@ -30,7 +30,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Cliente</th>
                                     <th scope="col">Descripción</th>
-                                    <th scope="col">Documentación</th>
+                                    {{-- <th scope="col">Documentación</th> --}}
                                     <th scope="col">Fecha de Inicio</th>
                                     <th scope="col">Fecha de Fin</th>
                                 </tr>
@@ -45,7 +45,7 @@
                                             <a href="{{ route('auditorias.edit', $auditoria) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Auditoría">
                                                 <i class="fa fa-pencil fa-fw text-white"></i>
                                             </a>
-                                            <form action="{{ route('auditorias.destroy', $auditoria) }}" method="POST" class="d-inline-block">
+                                            <form action="{{ route('auditorias.destroy', $auditoria) }}" method="POST" class="d-inline-block formulario-eliminar">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button id="delete" name="delete" type="submit" class="btn btn-danger btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Eliminar Auditoría" onclick="return confirm('¿Estás seguro de eliminar?')">
@@ -74,3 +74,7 @@
         </div>
     </div>
 @endsection
+
+{{-- free --}}
+ 
+{{-- end free --}}
