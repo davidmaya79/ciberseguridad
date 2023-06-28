@@ -10,6 +10,13 @@
                 </div>
             @endif
             {{-- Fin alerta --}}
+            {{-- danger --}}
+            @if (session('danger'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('danger') }}
+            </div>
+            @endif
+            {{-- fin danger --}}
 
             {{-- Inicio agregar --}}
             <div class="col-md-12">
@@ -74,6 +81,8 @@
                 @else
                     <div class="alert alert-secondary">No se encontraron resultados.</div>
                 @endif
+                    
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             </div>
         </div>
     </div>

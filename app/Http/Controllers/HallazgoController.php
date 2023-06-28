@@ -94,6 +94,6 @@ class HallazgoController extends Controller
     {
         $hallazgo->delete();
 
-        return back();
+        return back()->with('danger', 'Hallazgo Eliminado correctamente.');
     }
 }

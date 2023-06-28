@@ -109,13 +109,14 @@ class AuditoriaController extends Controller
 
         $auditoria->update($request->all());
 
-        return back()->with('success', 'Auditoria actualizada correctamente.');
+        return back()->with('success', 'Auditoria Actualizada correctamente.');
     }
 
     public function destroy(Auditoria $auditoria)
     {
         $auditoria->delete();
 
-        return back();
+        // return back();
+        return back()->with('danger', 'Auditoria Eliminado correctamente.');
     }
 }

@@ -149,7 +149,7 @@ class ClienteController extends Controller
     {
         $cliente->delete();
 
-        return back();
+        return back()->with('danger', 'Cliente Eliminado correctamente.');
 
     }
 }

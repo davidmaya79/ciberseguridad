@@ -11,6 +11,13 @@
             @endif
              
             {{-- fin alerta --}}
+             {{-- danger --}}
+             @if (session('danger'))
+             <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                 {{ session('danger') }}
+             </div>
+             @endif
+             {{-- fin danger --}}
             
             {{-- inicio agregar --}}
             <div class="col-md-12">

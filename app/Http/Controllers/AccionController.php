@@ -86,6 +86,6 @@ class AccionController extends Controller
     {
         $accione->delete();
 
-        return back();
+        return back()->with('danger', 'Acción Eliminado correctamente.');
     }
 }

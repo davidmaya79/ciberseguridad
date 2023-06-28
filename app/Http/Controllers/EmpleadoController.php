@@ -122,6 +122,6 @@ class EmpleadoController extends Controller
     {
         $empleado->delete();
 
-        return back();
+        return back()->with('danger', 'Empleado Eliminado correctamente.');
     }
 }
