@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
+    <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -21,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('auditorias') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -40,31 +41,28 @@
                      <!-- Right Side Of Navbar -->
                      <ul class="navbar-nav ms-auto">
                                
-                        {{-- <li class="nav-item">
-                            
-                            <a class="nav-link" href= "">Clientes</a>
-                        </li> --}}
+                        {{-- index auditoria --}}
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is('auditorias') || request()->is('auditorias/*') ? 'active' : ' ' }}" href="{{ route('auditorias.index') }}">Auditorias</a>
+                        </li>
+                         {{-- fin auditoria --}}
                         {{-- index acciones --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('acciones.index') }}">Acciones</a>
+                            <a class="nav-link {{ request()->is('acciones') || request()->is('acciones/*') ? 'active' : '' }}" href="{{ route('acciones.index') }}">Acciones</a>
                         </li>
                          {{-- fin acciones --}}
                         {{-- index hallazgos --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('hallazgos.index') }}">Hallazgo</a>
+                            <a class="nav-link {{ request()->is('hallazgos') || request()->is('hallazgos/*') ? 'active' : '' }}" href="{{ route('hallazgos.index') }}">Hallazgo</a>
                         </li>
                          {{-- fin hallazgos --}}
-                         {{-- index auditoria --}}
-                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('auditorias.index') }}">Auditorias</a>
-                        </li>
-                         {{-- fin auditoria --}}
+                          
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('empleados.index') }}">Empleados</a>
+                            <a class="nav-link {{ request()->is('empleados')|| request()->is('empleados/*') ? 'active' : '' }}" href="{{ route('empleados.index') }}">Empleados</a>
                         </li>
                         {{--  --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('clientes.index') }}">Clientes</a>
+                            <a class="nav-link {{ request()->is('clientes') || request()->is('clientes/*') ? 'active' : '' }}" href="{{ route('clientes.index') }}">Clientes</a>
                         </li>
                          {{--icono  --}} 
                        <!-- Right Side Of Navbar -->
