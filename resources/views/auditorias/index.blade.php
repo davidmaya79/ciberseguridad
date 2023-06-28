@@ -52,6 +52,10 @@
                                                     <i class="fa fa-trash-o fa-fw"></i>
                                                 </button>
                                             </form>
+                                            {{--  --}}
+                                            
+                                            
+                                            {{--  --}}
                                         </td>
                                         <td>{{ $auditoria->id }}</td>
                                         <td>{{ $auditoria->cliente->nombre_cliente }}</td>
@@ -73,8 +77,5 @@
             </div>
         </div>
     </div>
+     
 @endsection
-
-{{-- free --}}
- 
-{{-- end free --}}
