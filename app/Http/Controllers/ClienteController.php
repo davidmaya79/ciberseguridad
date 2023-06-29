@@ -20,22 +20,23 @@ class ClienteController extends Controller
     {
         // $clientes = Cliente::all();
 
-        $clientes = Cliente::paginate(9);
+        // $clientes = Cliente::paginate(9);
  
-        return view('clientes.index',['clientes' => $clientes]);
+        // return view('clientes.index',['clientes' => $clientes]);
+        $clientes = Cliente::query()
+        ->with(['auditoria'])
+        ->when(request('busqueda'), function ($query) {
+            return $query->where('nombre_cliente', 'like', '%' . request('busqueda') . '%');
+                // ->orWhereHas('cliente', function ($q) {
+                // $q->where('nombre_cliente', 'like', '%' . request('busqueda') . '%');
+    })
+
+        
+        ->paginate(9);
+    return view('clientes.index', ['clientes' => $clientes]);
     }
 
-    // pdf
-    // public function pdf()
-    // {
-    //     $clientes = Cliente::all();
-         
-
-    //     $pdf = Pdf::loadView('clientes.pdf', compact('clientes'));
-
-    //     return $pdf->stream();
-         
-    // }
+     
     
 
     

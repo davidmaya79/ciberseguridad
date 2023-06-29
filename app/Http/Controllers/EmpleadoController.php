@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Empleado;
 use App\Models\Auditoria;
+use App\Models\Accion;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
@@ -15,9 +16,20 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::paginate(9);
+        // $empleados = Empleado::paginate(9);
  
-        return view('empleados.index', ['empleados' => $empleados]);
+        // return view('empleados.index', ['empleados' => $empleados]);
+        $empleados = Empleado::query()
+        ->with(['auditoria'])
+        ->when(request('busqueda'), function ($query) {
+            return $query->where('nombre_empleado', 'like', '%' . request('busqueda') . '%');
+                // ->orWhereHas('cliente', function ($q) {
+                // $q->where('nombre_cliente', 'like', '%' . request('busqueda') . '%');
+    })
+
+        
+        ->paginate(9);
+    return view('empleados.index', ['empleados' => $empleados]);
     }
 
     /**

@@ -17,13 +17,14 @@ class Accion extends Model
         'fecha_implementacion',
         'auditoria_id',
         'nombre_cliente',
-        'cliente_id'
+        'cliente_id',
+        'nombre_empleado'
     ];
 
     public function auditoria()
     
     {
-        return $this->belongsTo(Auditoria::class,'auditoria_id'/* ,'cliente_id','nombre_cliente' */);
+        return $this->belongsTo(Auditoria::class,'auditoria_id');
     }
 
 }

@@ -26,6 +26,20 @@
                 </div>
             </div>
             {{-- Fin agregar --}}
+               {{-- Salto de línea --}}
+    <div class="row mt-3"></div>
+
+    {{-- buscador --}}
+    <div class="d-md-flex justify-content-md-end">
+       <form action = "{{ route('empleados.index') }}" method="GET">
+           <div class="btn-group">
+               <input type="text" name="busqueda" class="form-control">
+               <input type="submit" name="enviar" class="btn btn-primary">
+           </div>
+       </form>
+       </div>
+    {{-- fin buscador --}}
+    
             <div class="col-md-12">
                 @if (sizeof($empleados) > 0)
                     <div class="table-responsive">

@@ -10,11 +10,27 @@ use Illuminate\Http\Request;
 
 class AccionController extends Controller
 {
-    public function index()
-    {
-        $acciones = Accion::paginate(10);
-        return view('acciones.index', ['acciones' => $acciones]);
-    }
+    // public function index()
+    // {
+    //     $acciones = Accion::paginate(10);
+    //     return view('acciones.index', ['acciones' => $acciones]);
+    // }
+     public function index()
+{
+    $acciones = Accion::query()
+        ->with(['auditoria'])
+        ->when(request('busqueda'), function ($query) {
+            return $query->where('auditoria_id', 'like', '%' . request('busqueda') . '%')
+                ->orWhereHas('auditoria.cliente', function ($q) {
+                    $q->where('nombre_cliente', 'like', '%' . request('busqueda') . '%');
+                });
+        })
+        ->paginate(9);
+        // ->withQueryString();
+
+    return view('acciones.index', ['acciones' => $acciones]);
+}
+
 
     public function create()
     {

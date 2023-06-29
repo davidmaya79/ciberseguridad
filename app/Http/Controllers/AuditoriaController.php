@@ -12,11 +12,28 @@ use Illuminate\Http\Request;
 
 class AuditoriaController extends Controller
 {
-    public function index()
+    // public function index()
+    // {
+    //     $auditorias = Auditoria::paginate(9);
+    //     return view('auditorias.index', ['auditorias' => $auditorias]);
+    // }
+    public function index( )
     {
-        $auditorias = Auditoria::paginate(9);
+         
+         
+        $auditorias = Auditoria::query()
+            ->with(['cliente'])
+            ->when(request('busqueda'), function ($query) {
+                return $query->where('cliente_id', 'like', '%' . request('busqueda') . '%')
+                    ->orWhereHas('cliente', function ($q) {
+                    $q->where('nombre_cliente', 'like', '%' . request('busqueda') . '%');
+                });
+            })
+            ->paginate(9);
         return view('auditorias.index', ['auditorias' => $auditorias]);
     }
+
+
 
     public function pdf($id)
     {

@@ -11,7 +11,17 @@ class HallazgoController extends Controller
 {
     public function index()
     {
-        $hallazgos = Hallazgo::paginate(10);
+        // $hallazgos = Hallazgo::paginate(10);
+        // return view('hallazgos.index', ['hallazgos' => $hallazgos]);
+        $hallazgos = Hallazgo::query()
+            ->with(['auditoria'])
+            ->when(request('busqueda'), function ($query) {
+                return $query->where('auditoria_id', 'like', '%' . request('busqueda') . '%')
+                    ->orWhereHas('auditoria.cliente', function ($q) {
+                    $q->where('nombre_cliente', 'like', '%' . request('busqueda') . '%');
+                });
+            })
+            ->paginate(9);
         return view('hallazgos.index', ['hallazgos' => $hallazgos]);
     }
 
