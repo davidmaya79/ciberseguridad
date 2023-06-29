@@ -55,11 +55,7 @@
                     </tbody>
                
                 </table>
-                 {{-- pdf --}}
-              {{-- <a href="{{ route('clientes.pdf') }}" class="btn btn-info mt-2 mb-2" target="_blank">Reporte</a> --}}
-              <a href="{{ route('clientes.pdf', $cliente->id) }}" class="btn btn-info mt-2 mb-2" target="_blank">Generar PDF</a>
-
-              {{-- fin pdf --}}
+                  
               </div>
             </div>
         </div>

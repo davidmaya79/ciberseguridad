@@ -36,14 +36,7 @@ class ClienteController extends Controller
     //     return $pdf->stream();
          
     // }
-    public function pdf($id)
-{
-    $cliente = Cliente::findOrFail($id);
-
-    $pdf = Pdf::loadView('clientes.pdf', compact('cliente'));
-
-    return $pdf->stream();
-}
+    
 
     
 
