@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('auditoria_id');
             $table->foreign('auditoria_id')->references('id')->on('auditorias')->onDelete('cascade');
-            $table->string('responsable_acciones');
+            // $table->string('responsable_acciones');
+            $table->unsignedBigInteger('empleado_id');
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
             $table->string('descripcion_acciones');
             $table->date('fecha_implementacion');
             $table->timestamps();

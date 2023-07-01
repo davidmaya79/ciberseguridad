@@ -12,7 +12,7 @@ class Accion extends Model
     protected $table = 'acciones';
 
     protected $fillable = [
-        'responsable_acciones',
+        'empleado_id',
         'descripcion_acciones',
         'fecha_implementacion',
         'auditoria_id',
@@ -25,6 +25,11 @@ class Accion extends Model
     
     {
         return $this->belongsTo(Auditoria::class,'auditoria_id');
+    }
+
+    public function empleado()
+    {
+        return $this->belongsTo(Empleado::class);
     }
 
 }

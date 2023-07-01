@@ -35,7 +35,7 @@
                                 </tr>
                                 <tr>
                                     <th>Responsable de Acciones</th>
-                                    <td>{{ $accion->responsable_acciones }}</td>
+                                    <td>{{ $accion->empleado->nombre_empleado }}</td>
                                 </tr>
                                 <tr>
                                     <th>Descripción</th>

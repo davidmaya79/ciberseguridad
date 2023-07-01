@@ -26,6 +26,11 @@ class Empleado extends Model
     {
         return $this->belongsToMany(Auditoria::class,'auditorias_empleados','empleado_id','auditoria_id');
     }
+
+    public function acciones()
+    {
+        return $this->hasMany(Accion::class);
+    }
      
 }
 

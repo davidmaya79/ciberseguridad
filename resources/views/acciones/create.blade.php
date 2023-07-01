@@ -30,13 +30,24 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label for="responsable_acciones" class="font-weight-bold" style="font-size: 0.9rem;">Responsable de Acciones</label>
-                                <input type="text" name="responsable_acciones" class="form-control" value="{{ old('responsable_acciones') }}">
-                                @error('responsable_acciones')
-                                    <small class="text-danger">{{ $message }}</small>
+                            {{-- auditoria --}}
+                            <div class="col-md-12">
+                                <label for="empleado_id" class="form-label">Empleado</label>
+                                <select id="empleado_id" class="form-select shadow-none" name="empleado_id" value="{{ old('empleado_id') }}">
+                                    <option value="" selected>Seleccionar...</option>
+                                    @foreach ($empleados as $empleado)
+                                        <option value="{{ $empleado->id }}" {{ old('empleado_id') == $empleado->id ? 'selected' : '' }}>
+                                            {{ $empleado->nombre_empleado }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('empleado_id')
+                                    <small class="text-danger" role="alert">
+                                        {{ $message }}
+                                    </small>
                                 @enderror
                             </div>
+                            {{-- fin auditoria --}}
                             <div class="form-group">
                                 <label for="descripcion_acciones" class="font-weight-bold" style="font-size: 0.9rem;">Descripción</label>
                                 <input type="text" name="descripcion_acciones" class="form-control" value="{{ old('descripcion_acciones') }}">
