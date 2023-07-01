@@ -55,7 +55,7 @@
                                 @enderror
                             </div>
                             {{-- auditoria --}}
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label for="cliente_id" class="form-label">Cliente</label>
                                 <select id="cliente_id" class="form-select shadow-none" name="cliente_id" value="{{ old('cliente_id') }}">
                                     <option value="" selected>Seleccionar...</option>

@@ -33,15 +33,34 @@
     <div class="row mt-3"></div>
 
     {{-- buscador --}}
-    <div class="d-md-flex justify-content-md-end">
+    {{-- <div class="d-md-flex justify-content-md-end">
        <form action = "{{ route('acciones.index') }}" method="GET">
            <div class="btn-group">
                <input type="text" name="busqueda" class="form-control">
                <input type="submit" name="enviar" class="btn btn-primary">
            </div>
        </form>
-       </div>
+       </div> --}}
     {{-- fin buscador --}}
+    {{--  --}}
+     
+       {{-- buscador --}}
+<div class="d-md-flex justify-content-md-end">
+    <form action="{{ route('acciones.index') }}" method="GET">
+        <div class="input-group">
+            <input type="text" name="busqueda" class="form-control">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{{-- fin buscador --}}
+
+
+    {{--  --}}
+    {{-- Salto de línea --}}
+    <div class="row mt-3"></div>
             <div class="col-md-12">
                 @if (sizeof($acciones) > 0)
                     <div class="table-responsive">
@@ -51,6 +70,7 @@
                                     <th scope="col">Acciones</th>
                                     <th scope="col">#</th>
                                     <th scope="col">Cliente</th>
+                                    <th scope="col">Responsable de Acciones</th>
                                     <th scope="col">Descripción</th>
                                     <th scope="col">Fecha de Implementación</th>
                                 </tr>
@@ -87,6 +107,7 @@
                                         </td>
                                         <td>{{ $accion->id }}</td>
                                         <td>{{ $accion->auditoria->cliente->nombre_cliente }}</td>
+                                        <td>{{ $accion->empleado->nombre_empleado }}&nbsp{{$accion->empleado->apellido_empleado }}</td>
                                         <td>{{ $accion->descripcion_acciones }}</td>
                                         <td>{{ $accion->fecha_implementacion }}</td>
                                     </tr>
