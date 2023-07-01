@@ -38,9 +38,9 @@
                     <div class="btn-group">
                         <input type="text" name="busqueda" class="form-control">
                         <input type="submit" name="enviar" class="btn btn-primary">
-                        &nbsp;<a href="{{ route('clientes.eliminados') }}" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="">
+                        {{-- &nbsp;<a href="{{ route('clientes.eliminados') }}" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="">
                             <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                        </a>
+                        </a> --}}
                     </div>
                 </form>
             </div>
