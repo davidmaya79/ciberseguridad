@@ -36,7 +36,13 @@ class ClienteController extends Controller
     return view('clientes.index', ['clientes' => $clientes]);
     }
 
-     
+    public function eliminados()
+    {
+        // $clientesEliminados = Cliente::onlyTrashed()->paginate(10);
+
+        // return view('clientes.eliminados', ['clientes' => $clientesEliminados]);
+        echo "Hola mundo";
+    }
     
 
     

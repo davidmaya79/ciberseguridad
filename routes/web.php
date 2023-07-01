@@ -63,3 +63,4 @@ Route::resource('acciones', AccionController::class);
 
 // Route::delete('/clientes/{cliente}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
 
+Route::get('clientes/eliminados', [App\Http\Controllers\ClienteController::class, 'eliminados'])->name('clientes.eliminados');

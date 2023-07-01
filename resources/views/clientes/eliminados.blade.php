@@ -3,34 +3,9 @@
 @section('content')
     <div class="container">
         <div class="row">
-            {{-- inicio alerta --}}
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                </div>
-            @endif
+            
 
-            {{-- fin alerta --}}
-            {{-- danger --}}
-            @if (session('danger'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('danger') }}
-                </div>
-            @endif
-            {{-- fin danger --}}
-
-            {{-- inicio agregar --}}
-            <div class="col-md-12">
-                <div class="pull-right">
-                    <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top"
-                        title="Agregar Clientes" href="{{ route('clientes.create') }}">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-            {{-- fin agregar --}}
-            {{-- Salto de línea --}}
-            <div class="row mt-3"></div>
+             
 
             {{-- buscador --}}
             <div class="d-md-flex justify-content-md-end">
@@ -38,9 +13,7 @@
                     <div class="btn-group">
                         <input type="text" name="busqueda" class="form-control">
                         <input type="submit" name="enviar" class="btn btn-primary">
-                        &nbsp;<a href="{{ route('clientes.eliminados') }}" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="">
-                            <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                        </a>
+                        
                     </div>
                 </form>
             </div>
@@ -52,7 +25,7 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col">Acciones</th>
+                                    {{-- <th scope="col">Acciones</th> --}}
                                     <th scope="col">#</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Email</th>
@@ -65,7 +38,7 @@
                             <tbody>
                                 @foreach ($clientes as $cliente)
                                     <tr>
-                                        <td class="text-center" width="20%">
+                                        {{-- <td class="text-center" width="20%">
                                             <a href="{{ route('clientes.show', $cliente) }}"
                                                 class="btn btn-dark btn-sm shadow-none" data-toggle="tooltip"
                                                 data-placement="top" title="Ver Cliente">
@@ -88,10 +61,8 @@
                                                     <i class="fa fa-trash-o fa-fw"></i>
                                                 </button>
                                             </form>
-                                            {{--  --}}
-
-                                            {{--  --}}
-                                        </td>
+                                             
+                                        </td> --}}
                                         <td>{{ $cliente->id }}</td>
                                         <td>{{ $cliente->nombre_cliente }}</td>
                                         <td>{{ $cliente->email_cliente }}</td>
