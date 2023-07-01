@@ -70,16 +70,25 @@
                                             <a href="{{ route('auditorias.edit', $auditoria) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Auditoría">
                                                 <i class="fa fa-pencil fa-fw text-white"></i>
                                             </a>
-                                            <form action="{{ route('auditorias.destroy', $auditoria) }}" method="POST" class="d-inline-block formulario-eliminar">
+                                            {{-- <form action="{{ route('auditorias.destroy', $auditoria) }}" method="POST" class="d-inline-block formulario-eliminar">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button id="delete" name="delete" type="submit" class="btn btn-danger btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Eliminar Auditoría" onclick="return confirm('¿Estás seguro de eliminar?')">
                                                     <i class="fa fa-trash-o fa-fw"></i>
                                                 </button>
-                                            </form>
+                                            </form> --}}
                                             {{--  --}}
                                             
-                                            
+                                            <form action="{{ route('auditorias.destroy', $auditoria) }}" method="POST"
+                                            class="d-inline-block formulario-eliminar">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm shadow-none"
+                                                data-toggle="tooltip" data-placement="top" title="Eliminar Auditoria"
+                                                onclick="return confirmarEliminacion()">
+                                                <i class="fa fa-trash-o fa-fw"></i>
+                                            </button>
+                                        </form>
                                             {{--  --}}
                                         </td>
                                         <td>{{ $auditoria->id }}</td>
@@ -105,4 +114,36 @@
         </div>
     </div>
      
+@endsection
+
+@section('js')
+<script>
+    $(document).ready(function () {
+        $('.formulario-eliminar').submit(function (e) {
+            e.preventDefault();
+
+            var form = this; // Guardar una referencia al formulario actual
+
+            confirmarEliminacion().then(function (result) {
+                if (result.isConfirmed) {
+                    // Enviar el formulario solo si el usuario confirma
+                    form.submit();
+                }
+            });
+        });
+
+        function confirmarEliminacion() {
+            return Swal.fire({
+                title: '¿Estás seguro?',
+                text: '¡No podrás revertir esto!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo'
+            });
+        }
+    });
+</script>
+
 @endsection

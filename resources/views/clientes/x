@@ -76,15 +76,18 @@
                                             </a>
 
                                             <form action="{{ route('clientes.destroy', $cliente) }}" method="POST"
-                                                class="d-inline-block formulario-eliminar">
+                                                class="d-inline-block">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm shadow-none"
-                                                    data-toggle="tooltip" data-placement="top" title="Eliminar Cliente"
-                                                    onclick="return confirmarEliminacion()">
+                                                <button id="delete" name="delete" type="submit"
+                                                    class="btn btn-danger btn-sm shadow-none" data-toggle="tooltip"
+                                                    data-placement="top" title="Eliminar Cliente"
+                                                    onclick="return confirm('¿Estás seguro de eliminar?')">
                                                     <i class="fa fa-trash-o fa-fw"></i>
                                                 </button>
                                             </form>
+
+                                       
                                         </td>
                                         <td>{{ $cliente->id }}</td>
                                         <td>{{ $cliente->nombre_cliente }}</td>
@@ -106,36 +109,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('js')
-<script>
-    $(document).ready(function () {
-        $('.formulario-eliminar').submit(function (e) {
-            e.preventDefault();
-
-            var form = this; // Guardar una referencia al formulario actual
-
-            confirmarEliminacion().then(function (result) {
-                if (result.isConfirmed) {
-                    // Enviar el formulario solo si el usuario confirma
-                    form.submit();
-                }
-            });
-        });
-
-        function confirmarEliminacion() {
-            return Swal.fire({
-                title: '¿Estás seguro?',
-                text: '¡No podrás revertir esto!',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, eliminarlo'
-            });
-        }
-    });
-</script>
-
 @endsection

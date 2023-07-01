@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('telefono_cliente');
             $table->string('rut_cliente')->unique();
             $table->string('direccion_cliente');
+            // $table->softDeletes();
             $table->timestamps();
         });
     }

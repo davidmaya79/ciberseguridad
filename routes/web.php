@@ -57,4 +57,9 @@ Route::resource('empleados', EmpleadoController::class);
 Route::resource('auditorias', AuditoriaController::class);
 Route::resource('hallazgos', HallazgoController::class);
 Route::resource('acciones', AccionController::class);
- 
+
+// Route::put('clientes/{id}/restore', [ClienteController::class, 'restore'])->name('clientes.restore');
+// Route::delete('clientes/{id}/forceDelete', [ClienteController::class, 'forceDelete'])->name('clientes.forceDelete');
+
+// Route::delete('/clientes/{cliente}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
+

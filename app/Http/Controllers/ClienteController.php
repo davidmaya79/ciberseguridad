@@ -139,6 +139,38 @@ class ClienteController extends Controller
      * @param  \App\Models\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
+
+    //  public function restore($id)
+    //  {
+    //      $cliente = Cliente::onlyTrashed()->find($id);
+ 
+    //      if ($cliente) {
+    //          $cliente->restore();
+    //          return redirect()->route('clientes.index');
+    //      } else {
+    //          return redirect()->route('clientes.index')->with('danger', 'No se pudo encontrar el cliente para restaurar.');
+    //      }
+    //  }
+ 
+    //  /**
+    //   * Permanently delete the specified resource from storage.
+    //   *
+    //   * @param  int  $id
+    //   * @return \Illuminate\Http\Response
+    //   */
+    //  public function forceDelete($id)
+    //  {
+    //      $cliente = Cliente::onlyTrashed()->find($id);
+ 
+    //      if ($cliente) {
+    //          $cliente->forceDelete();
+    //          return redirect()->route('clientes.index')->with('success', 'Cliente eliminado permanentemente correctamente.');
+    //      } else {
+    //          return redirect()->route('clientes.index')->with('danger', 'No se pudo encontrar el cliente para eliminar permanentemente.');
+    //      }
+    //  }
+ 
+
     public function destroy(Cliente $cliente)
     {
         $cliente->delete();

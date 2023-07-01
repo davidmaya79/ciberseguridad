@@ -4,6 +4,13 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
+                {{--  --}}
+                <div class="pull-right">
+                    <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Inicio" href="{{ route('empleados.index') }}"> 
+                        <i class="fa fa-home fa-fw"></i> 
+                    </a>
+                </div>
+                {{--  --}}
                 <div class="card mx-auto" style="width: 50%;">
                     <div class="card-header bg-dark text-light">
                         <h5 class="mb-0">

@@ -90,25 +90,7 @@
                                 @enderror
                             </div>
                             {{-- fin empleado --}}
-                            {{-- empleado 2--}}
-                            {{-- <div class="col-md-6">
-                                <label class="form-label">Empleados</label>
-                                @foreach ($empleados as $empleado)
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="auditorias_empleados[]" value="{{ $empleado->id }}" id="empleado_{{ $empleado->id }}" {{ in_array($empleado->id, old('auditorias_empleados', [])) ? 'checked' : '' }}>
-                                        <label class="form-check-label" for="empleado_{{ $empleado->id }}">
-                                            {{ $empleado->nombre_empleado }}
-                                        </label>
-                                    </div>
-                                @endforeach
-                                @error('auditorias_empleados')
-                                    <small class="text-danger" role="alert">
-                                        {{ $message }}
-                                    </small>
-                                @enderror
-                            </div> --}}
                             
-                            {{-- fin empleado 2--}}
                             {{--  --}}
                             
                             {{--  --}}

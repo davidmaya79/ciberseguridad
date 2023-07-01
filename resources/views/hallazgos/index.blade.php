@@ -63,13 +63,23 @@
                                             <a href="{{ route('hallazgos.edit', $hallazgo) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Hallazgo">
                                                 <i class="fa fa-pencil fa-fw text-white"></i>
                                             </a>
-                                            <form action="{{ route('hallazgos.destroy', $hallazgo) }}" method="POST" class="d-inline-block">
+                                            {{-- <form action="{{ route('hallazgos.destroy', $hallazgo) }}" method="POST" class="d-inline-block">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button id="delete" name="delete" type="submit" class="btn btn-danger btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Eliminar Hallazgo" onclick="return confirm('¿Estás seguro de eliminar?')">
                                                     <i class="fa fa-trash-o fa-fw"></i>
                                                 </button>
-                                            </form>
+                                            </form> --}}
+                                            <form action="{{ route('hallazgos.destroy', $hallazgo) }}" method="POST"
+                                            class="d-inline-block formulario-eliminar">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm shadow-none"
+                                                data-toggle="tooltip" data-placement="top" title="Eliminar Hallazgo"
+                                                onclick="return confirmarEliminacion()">
+                                                <i class="fa fa-trash-o fa-fw"></i>
+                                            </button>
+                                        </form>
                                         </td>
                                         <td>{{ $hallazgo->id }}</td>
                                         <td>{{ $hallazgo->auditoria->cliente->nombre_cliente }}</td>
@@ -91,4 +101,36 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+<script>
+    $(document).ready(function () {
+        $('.formulario-eliminar').submit(function (e) {
+            e.preventDefault();
+
+            var form = this; // Guardar una referencia al formulario actual
+
+            confirmarEliminacion().then(function (result) {
+                if (result.isConfirmed) {
+                    // Enviar el formulario solo si el usuario confirma
+                    form.submit();
+                }
+            });
+        });
+
+        function confirmarEliminacion() {
+            return Swal.fire({
+                title: '¿Estás seguro?',
+                text: '¡No podrás revertir esto!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo'
+            });
+        }
+    });
+</script>
+
 @endsection

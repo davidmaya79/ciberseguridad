@@ -65,13 +65,25 @@
                                             <a href="{{ route('acciones.edit', $accion) }}" class="btn btn-primary btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Acción">
                                                 <i class="fa fa-pencil fa-fw text-white"></i>
                                             </a>
-                                            <form action="{{ route('acciones.destroy', $accion) }}" method="POST" class="d-inline-block">
+                                            {{-- <form action="{{ route('acciones.destroy', $accion) }}" method="POST" class="d-inline-block">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button id="delete" name="delete" type="submit" class="btn btn-danger btn-sm shadow-none" data-toggle="tooltip" data-placement="top" title="Eliminar Acción" onclick="return confirm('¿Estás seguro de eliminar?')">
                                                     <i class="fa fa-trash-o fa-fw"></i>
                                                 </button>
+                                            </form> --}}
+
+                                            <form action="{{ route('acciones.destroy', $accion) }}" method="POST"
+                                                class="d-inline-block formulario-eliminar">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm shadow-none"
+                                                    data-toggle="tooltip" data-placement="top" title="Eliminar Cliente"
+                                                    onclick="return confirmarEliminacion()">
+                                                    <i class="fa fa-trash-o fa-fw"></i>
+                                                </button>
                                             </form>
+
                                         </td>
                                         <td>{{ $accion->id }}</td>
                                         <td>{{ $accion->auditoria->cliente->nombre_cliente }}</td>
@@ -91,4 +103,37 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('js')
+<script>
+    $(document).ready(function () {
+        $('.formulario-eliminar').submit(function (e) {
+            e.preventDefault();
+
+            var form = this; // Guardar una referencia al formulario actual
+
+            confirmarEliminacion().then(function (result) {
+                if (result.isConfirmed) {
+                    // Enviar el formulario solo si el usuario confirma
+                    form.submit();
+                }
+            });
+        });
+
+        function confirmarEliminacion() {
+            return Swal.fire({
+                title: '¿Estás seguro?',
+                text: '¡No podrás revertir esto!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo'
+            });
+        }
+    });
+</script>
+
 @endsection
