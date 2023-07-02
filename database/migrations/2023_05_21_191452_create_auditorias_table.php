@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('documentacion_auditoria');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
+             
             $table->timestamps();
         });
     }

@@ -11,6 +11,8 @@ class Auditoria extends Model
 
     protected $table = 'auditorias';
 
+     
+
     protected $fillable = [
         'descripcion_auditoria',
         'documentacion_auditoria',

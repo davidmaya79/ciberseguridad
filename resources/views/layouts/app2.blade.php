@@ -42,7 +42,9 @@
                     </ul> --}}
                      <!-- Right Side Of Navbar -->
                      <ul class="navbar-nav ms-auto">
-                               
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is('clientes') || request()->is('clientes/*') ? 'active' : '' }}" href="{{ route('clientes.index') }}">Clientes</a>
+                        </li>
                         {{-- index auditoria --}}
                         <li class="nav-item">
                             <a class="nav-link {{ request()->is('auditorias') || request()->is('auditorias/*') ? 'active' : ' ' }}" href="{{ route('auditorias.index') }}">Auditorias</a>
@@ -63,9 +65,7 @@
                             <a class="nav-link {{ request()->is('empleados')|| request()->is('empleados/*') ? 'active' : '' }}" href="{{ route('empleados.index') }}">Empleados</a>
                         </li>
                         {{--  --}}
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->is('clientes') || request()->is('clientes/*') ? 'active' : '' }}" href="{{ route('clientes.index') }}">Clientes</a>
-                        </li>
+                        
                          {{--icono  --}} 
                        <!-- Right Side Of Navbar -->
 <ul class="navbar-nav ms-auto">
