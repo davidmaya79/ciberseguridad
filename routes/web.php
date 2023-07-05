@@ -46,7 +46,7 @@ Route::get('/auditorias/index', [App\Http\Controllers\AuditoriaController::class
  
  
  
-Route::get('clientes/pdf/{id}', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
+// Route::get('clientes/pdf/{id}', [App\Http\Controllers\ClienteController::class, 'pdf'])->name('clientes.pdf');
 Route::get('auditorias/pdf/{id}', [App\Http\Controllers\AuditoriaController::class, 'pdf'])->name('auditorias.pdf');
 
 
@@ -63,4 +63,4 @@ Route::resource('acciones', AccionController::class);
 
 // Route::delete('/clientes/{cliente}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
 
-Route::get('clientes/eliminados', [App\Http\Controllers\ClienteController::class, 'eliminados'])->name('clientes.eliminados');
+// Route::get('clientes/eliminados', [App\Http\Controllers\ClienteController::class, 'eliminados'])->name('clientes.eliminados');
