@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 @else
-                    <div class="alert alert-secondary">No se encontraron resultados.</div>
+                    <div class="alert alert-secondary">No se encontraron resultadoss.</div>
                 @endif
             </div>
         </div>
